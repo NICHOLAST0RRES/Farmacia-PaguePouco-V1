@@ -1,4 +1,4 @@
-package com.paguepouco.api.dtos;
+package com.paguepouco.api.dtos.Farmaceutico;
 
 import com.paguepouco.api.model.Especialidade;
 import com.paguepouco.api.model.Farmaceutico;

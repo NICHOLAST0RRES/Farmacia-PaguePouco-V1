@@ -1,13 +1,12 @@
 package com.paguepouco.api.repositories;
 
-import com.paguepouco.api.model.Farmaceutico;
+
+import com.paguepouco.api.model.Medicamento;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Range;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-
-
-public interface FarmaceuticoRepository extends JpaRepository<Farmaceutico, Long> {
-    Page<Farmaceutico> findAllByAtivoTrue(Pageable paginacao);
+public interface MedicamentoRepository extends JpaRepository<Medicamento, Long> {
+    Page<Medicamento> findAllByAtivoTrue(Pageable paginacao);
 }

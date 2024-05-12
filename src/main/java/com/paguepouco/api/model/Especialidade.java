@@ -6,5 +6,5 @@ public enum Especialidade {
     Genética,Homeopatia
     ,Farmácia_oncológica
     ,Biofarmácia
-    ,Toxicologia
+    ,Toxicologia,Não_possui
 }

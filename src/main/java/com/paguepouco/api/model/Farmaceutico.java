@@ -1,18 +1,17 @@
 package com.paguepouco.api.model;
 
 
-import com.paguepouco.api.dtos.CadastroFarmaceuticoDTO;
+import com.paguepouco.api.dtos.Farmaceutico.AtualizarFarmaceutico;
+import com.paguepouco.api.dtos.Farmaceutico.CadastroFarmaceutico;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Farmaceutico {
 
     @Id
@@ -21,11 +20,29 @@ public class Farmaceutico {
     private String nome;
     private String tipo ;
     private String crf ;
+
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
+
     private String turno;
 
-    public Farmaceutico(CadastroFarmaceuticoDTO dados) {
+    private boolean ativo;
+
+
+
+
+    public Farmaceutico (CadastroFarmaceutico dados){
+        this.ativo = true ;
+        this.nome = dados.nome();
+        this.tipo = dados.tipo();
+        this.crf = dados.crf();
+        this.especialidade = dados.especialidade();
+        this.turno = dados.turno();
+
+    }
+
+
+    public void atualizarFarmaceutico(AtualizarFarmaceutico dados) {
         if (dados.nome() != null) {
             this.nome = dados.nome();
         }
@@ -39,8 +56,17 @@ public class Farmaceutico {
         if(dados.turno() != null) {
             this.turno = dados.turno();
         }
-        if (this.especialidade != null){
-            this.especialidade = dados.especialidade();
-        }
+
+    }
+
+
+    // em banco de dados é mais recomendavel mudar o status para inativo doq apagar completamente do BDs
+    public void desativar() {
+        this.ativo = false ;
+    }
+
+    public void reativar(){
+        this.ativo = true ;
     }
 }
+
