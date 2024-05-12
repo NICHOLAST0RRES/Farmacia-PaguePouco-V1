@@ -23,7 +23,7 @@ public class TratadorDeErros {
             return ResponseEntity.notFound().build();
     }
 
-    //Trata o erro 404 e explica oq veio errado da uma maneira mais organizada
+    //Trata o erro 400 e explica oq veio errado da uma maneira mais organizada
     @ExceptionHandler(MethodArgumentNotValidException.class)
    public ResponseEntity tratarErro400(MethodArgumentNotValidException ex){
         var erros = ex.getFieldErrors();
