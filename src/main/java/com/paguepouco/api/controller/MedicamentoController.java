@@ -1,8 +1,7 @@
 package com.paguepouco.api.controller;
 
 
-import com.paguepouco.api.dtos.Farmaceutico.AtualizarFarmaceutico;
-import com.paguepouco.api.dtos.Farmaceutico.DetalhamentoFarmaceutico;
+
 import com.paguepouco.api.dtos.Medicamento.AtualizarMedicamento;
 import com.paguepouco.api.dtos.Medicamento.CadastroMedicamento;
 import com.paguepouco.api.dtos.Medicamento.DetalhamentoMedicamento;

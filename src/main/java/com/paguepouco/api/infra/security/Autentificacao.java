@@ -1,4 +1,4 @@
-package com.paguepouco.api.infra.services;
+package com.paguepouco.api.infra.security;
 
 
 import com.paguepouco.api.repositories.UsuarioRepository;
@@ -17,7 +17,7 @@ public class Autentificacao implements UserDetailsService {
     @Autowired
     private UsuarioRepository repository;
 
-    @Override  // esse metodo
+    @Override  // esse metodo busca o usuario
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return repository.findByLogin(username);
     }
