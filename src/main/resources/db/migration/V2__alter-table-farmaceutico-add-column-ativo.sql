@@ -1,3 +1,3 @@
 
-alter table farmaceutico add ativo tinyint;
-update farmaceutico set ativo = 1;
+alter table farmaceuticos add ativo tinyint;
+update farmaceuticos set ativo = 1;

@@ -3,13 +3,11 @@ package com.paguepouco.api.model;
 
 import com.paguepouco.api.dtos.Medicamento.AtualizarMedicamento;
 import com.paguepouco.api.dtos.Medicamento.CadastroMedicamento;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+@Table(name = "medicamentos")
+@Entity(name = "Medicamento")
 @Getter
 @Setter
 @NoArgsConstructor

@@ -6,7 +6,8 @@ import com.paguepouco.api.dtos.Farmaceutico.CadastroFarmaceutico;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+@Table(name = "farmaceuticos")
+@Entity(name = "Farmaceutico")
 @Getter
 @Setter
 @NoArgsConstructor
